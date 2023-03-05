@@ -42,4 +42,26 @@ public class CustomListTest {
         assertTrue(list.hasCity(city));
     }
 
+    /**
+     * Test to see if a city is successfully deleted from the list of cities
+     */
+    @Test
+    public void deleteTest() {
+        CustomList list = new CustomList(null, new ArrayList<>());
+        assertEquals(0, list.getCount());
+        City city = new City("Estevan", "SK");
+        City city2 = new City("Calgary", "AB");
+        City city3 = new City("Fredericton", "NB");
+        list.addCity(city);
+        list.addCity(city2);
+        list.addCity(city3);
+        assertEquals(3, list.getCount());
+        list.delete(city);
+        assertEquals(2, list.getCount());
+        list.delete(city3);
+        assertEquals(1, list.getCount());
+        list.delete(city2);
+        assertEquals(0, list.getCount());
+    }
+
 }
