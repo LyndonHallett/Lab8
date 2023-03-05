@@ -20,8 +20,9 @@ public class CustomListTest {
      */
     @Test
     public void addCityTest(){
-        list = MockCityList();
-        int listSize = list.getCount(); list.addCity(new City("Estevan", "SK")); assertEquals(list.getCount(),listSize + 1);
+        CustomList list = new CustomList(null, new ArrayList<>());
+        int listSize = list.getCount();
+        list.addCity(new City("Estevan", "SK")); assertEquals(list.getCount(),listSize + 1);
     }
 
 }
