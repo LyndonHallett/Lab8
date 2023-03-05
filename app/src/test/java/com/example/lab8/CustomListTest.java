@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class CustomListTest {
 
@@ -52,6 +53,7 @@ public class CustomListTest {
         City city = new City("Estevan", "SK");
         City city2 = new City("Calgary", "AB");
         City city3 = new City("Fredericton", "NB");
+        assertThrows(NoSuchElementException.class, ()->{list.delete(city);});
         list.addCity(city);
         list.addCity(city2);
         list.addCity(city3);
