@@ -72,7 +72,7 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     public void delete(City city) {
-        if (!list.hasCity(city)) {
+        if (!hasCity(city)) {
             throw new NoSuchElementException();
         } else {
             cities.remove(city);
